@@ -16,14 +16,17 @@ using System.Windows.Shapes;
 namespace WpfApp1
 {
     /// <summary>
-    /// Interakční logika pro MainWindow.xaml
+    /// Interakční logika pro Menu.xaml
     /// </summary>
-    public partial class MainWindow : Window
+    public partial class Menu : Page
     {
-        public MainWindow()
+        public Menu()
         {
             InitializeComponent();
-            menuFrame.Navigate(new Menu());
-        }    
+        }
+        private void Play_Click(object sender, RoutedEventArgs e)
+        {
+            NavigationService.Navigate(new Game());
+        }
     }
 }
