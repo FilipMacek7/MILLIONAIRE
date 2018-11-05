@@ -24,6 +24,25 @@ namespace WpfApp1
         {
             InitializeComponent();
             menuFrame.Navigate(new Menu());
-        }    
+        }
+
+        private double aspectRatio = 1.78;
+
+        private void Window_Loaded(object sender, RoutedEventArgs e)
+        {
+            aspectRatio = this.ActualWidth / this.ActualHeight;
+        }
+
+        protected override void OnRenderSizeChanged(SizeChangedInfo sizeInfo)
+        {
+            if (sizeInfo.WidthChanged)
+            {
+                this.Width = sizeInfo.NewSize.Height * aspectRatio;
+            }
+            else
+            {
+                this.Height = sizeInfo.NewSize.Width * aspectRatio;
+            }
+        }
     }
 }

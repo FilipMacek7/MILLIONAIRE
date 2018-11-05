@@ -5,6 +5,6 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:WpfApp1"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
-        <Frame x:Name="menuFrame" Source="Menu.xaml"></Frame>
+        Title="MainWindow" Height="450" Width="800" Loaded="Window_Loaded" MinHeight="450">
+    <Frame x:Name="menuFrame" Source="Menu.xaml" NavigationUIVisibility="Hidden"></Frame>
 </Window>

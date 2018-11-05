@@ -35,8 +35,14 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="EPPlus, Version=4.5.2.1, Culture=neutral, PublicKeyToken=ea159fdaa78159a1, processorArchitecture=MSIL">
+      <HintPath>..\packages\EPPlus.4.5.2.1\lib\net40\EPPlus.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
+    <Reference Include="System.configuration" />
     <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Security" />
     <Reference Include="System.Xml" />
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Core" />
@@ -55,6 +61,11 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Question.cs" />
+    <Compile Include="Sound.cs" />
+    <Compile Include="WonGame.xaml.cs">
+      <DependentUpon>WonGame.xaml</DependentUpon>
+    </Compile>
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -72,6 +83,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Menu.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="WonGame.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -100,6 +115,7 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+    <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -109,14 +125,45 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="img\menu.jpg">
+    <Resource Include="img\menu.jpg">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
+    </Resource>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="img\game.jpg">
+    <Resource Include="img\game.jpg">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
+    </Resource>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="img\5050.png" />
+    <Resource Include="img\askAudience.png" />
+    <Resource Include="img\askFriend.png" />
+    <Resource Include="img\5050used.png" />
+    <Resource Include="img\askAudienceused.png" />
+    <Resource Include="img\askFriendused.png" />
+    <Content Include="sounds\16000letsplay.mp3" />
+    <Content Include="sounds\2000letsplay.mp3" />
+    <Content Include="sounds\4000letsplay.mp3" />
+    <Content Include="sounds\8000letsplay.mp3" />
+    <Content Include="sounds\win.mp3" />
+    <Content Include="sounds\winMillion.mp3" />
+    <Resource Include="img\level1.png" />
+    <Resource Include="img\level10.png" />
+    <Resource Include="img\level11.png" />
+    <Resource Include="img\level12.png" />
+    <Resource Include="img\level13.png" />
+    <Resource Include="img\level14.png" />
+    <Resource Include="img\level15.png" />
+    <Resource Include="img\level2.png" />
+    <Resource Include="img\level3.png" />
+    <Resource Include="img\level4.png" />
+    <Resource Include="img\level5.png" />
+    <Resource Include="img\level6.png" />
+    <Resource Include="img\level7.png" />
+    <Resource Include="img\level8.png" />
+    <Resource Include="img\level9.png" />
+    <Resource Include="img\question.png" />
+    <Content Include="sounds\menu.mp3" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
