@@ -57,10 +57,10 @@
             </StackPanel>
         </Button>
         <Button Name="Leave" HorizontalAlignment="Left" VerticalAlignment="Center" Width="75" Height="40" Grid.Row="6" Content="Leave" Click="LeaveGame" Grid.RowSpan="2" Margin="15,25,0,26"></Button>
-        <Rectangle  Fill="#FFF4F4F5"  Stroke="Black"  Grid.ColumnSpan="3" Visibility="Visible" Name="canvas" Grid.Column="4"  Margin="10"></Rectangle>
+        <Rectangle  Fill="#FFF4F4F5"  Stroke="Black"  Grid.ColumnSpan="3" Visibility="Hidden" Name="canvas" Grid.Column="4"  Margin="10"></Rectangle>
         <Label Name="askFriendText"  Content="Dialing the call..." Grid.Column="4" HorizontalAlignment="Left"  VerticalAlignment="Top" Height="173"  Grid.ColumnSpan="3" Visibility="Hidden"  Margin="10,10,0,0" FontSize="12" Width="600"/>
         <Button Grid.ColumnSpan="2" Name="SkipButton" Content="Skip"  Grid.Column="6" HorizontalAlignment="Left" VerticalAlignment="Bottom" Width="75" Margin="20" Click="Skip" Visibility="Hidden"/>
-        <ProgressBar Visibility="Visible" Name="PrbarA" Grid.Column="4" HorizontalAlignment="Left" Height="15" Margin="23,78,0,0" VerticalAlignment="Top" Width="109" RenderTransformOrigin="0.495,0.6">
+        <ProgressBar Visibility="Hidden" Name="PrbarA" Grid.Column="4" HorizontalAlignment="Left" Height="15" Margin="23,78,0,0" VerticalAlignment="Top" Width="109" RenderTransformOrigin="0.495,0.6">
             <ProgressBar.RenderTransform>
                 <TransformGroup>
                     <ScaleTransform/>
@@ -70,8 +70,8 @@
                 </TransformGroup>
             </ProgressBar.RenderTransform>
         </ProgressBar>
-        <Label Visibility="Visible" Name="askAudienceLabel" Content="                 A              B               C                  D" Grid.Column="4" HorizontalAlignment="Left" Margin="10,141,0,0" VerticalAlignment="Top" Height="42" Width="301"  Grid.ColumnSpan="3"/>
-        <ProgressBar Visibility="Visible" Name="PrbarB" Grid.Column="4" HorizontalAlignment="Left" Height="15" Margin="76,80,0,0" VerticalAlignment="Top" Width="109" RenderTransformOrigin="0.495,0.6" Grid.ColumnSpan="3">
+        <Label Visibility="Hidden" Name="askAudienceLabel" Content="                 A              B               C                  D" Grid.Column="4" HorizontalAlignment="Left" Margin="10,141,0,0" VerticalAlignment="Top" Height="42" Width="301"  Grid.ColumnSpan="3"/>
+        <ProgressBar Visibility="Hidden" Name="PrbarB" Grid.Column="4" HorizontalAlignment="Left" Height="15" Margin="76,80,0,0" VerticalAlignment="Top" Width="109" RenderTransformOrigin="0.495,0.6" Grid.ColumnSpan="3">
             <ProgressBar.RenderTransform>
                 <TransformGroup>
                     <ScaleTransform/>
@@ -81,7 +81,7 @@
                 </TransformGroup>
             </ProgressBar.RenderTransform>
         </ProgressBar>
-        <ProgressBar Visibility="Visible" Name="PrbarC" Grid.Column="4" HorizontalAlignment="Left" Height="15" Margin="135,79,0,0" VerticalAlignment="Top" Width="109" RenderTransformOrigin="0.495,0.6" Grid.ColumnSpan="3">
+        <ProgressBar Visibility="Hidden" Name="PrbarC" Grid.Column="4" HorizontalAlignment="Left" Height="15" Margin="135,79,0,0" VerticalAlignment="Top" Width="109" RenderTransformOrigin="0.495,0.6" Grid.ColumnSpan="3">
             <ProgressBar.RenderTransform>
                 <TransformGroup>
                     <ScaleTransform/>
@@ -91,7 +91,7 @@
                 </TransformGroup>
             </ProgressBar.RenderTransform>
         </ProgressBar>
-        <ProgressBar Visibility="Visible" Name="PrbarD" Grid.Column="4"  Grid.ColumnSpan="4" HorizontalAlignment="Left" Height="15" Margin="198,80,11,0" VerticalAlignment="Top" Width="110" RenderTransformOrigin="0.495,0.6">
+        <ProgressBar Visibility="Hidden" Name="PrbarD" Grid.Column="4"  Grid.ColumnSpan="4" HorizontalAlignment="Left" Height="15" Margin="198,80,11,0" VerticalAlignment="Top" Width="110" RenderTransformOrigin="0.495,0.6">
             <ProgressBar.RenderTransform>
                 <TransformGroup>
                     <ScaleTransform/>
@@ -101,5 +101,9 @@
                 </TransformGroup>
             </ProgressBar.RenderTransform>
         </ProgressBar>
+        <Label Content="A" Grid.Column="3" HorizontalAlignment="Left" Grid.Row="4" VerticalAlignment="Top" RenderTransformOrigin="0.458,0.548" Width="48" Height="22" Margin="10,3,0,0"/>
+        <Label Content="C" Grid.Column="3" HorizontalAlignment="Left" Grid.Row="6" VerticalAlignment="Top" RenderTransformOrigin="0.458,0.548" Width="48" Height="29" Margin="10,7,0,0"/>
+        <Label Content="D" Grid.Column="6" HorizontalAlignment="Left" Grid.Row="6" VerticalAlignment="Top" RenderTransformOrigin="0.458,0.548" Width="48" Height="29" Margin="10,7,0,0"/>
+        <Label Content="B" Grid.Column="6" HorizontalAlignment="Left" Grid.Row="4" VerticalAlignment="Top" RenderTransformOrigin="0.458,0.548" Width="48" Height="29" Margin="10,3,0,0"/>
     </Grid>
 </Page>
