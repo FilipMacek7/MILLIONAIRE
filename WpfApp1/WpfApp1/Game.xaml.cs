@@ -804,7 +804,7 @@ namespace WpfApp1
         string txt;
         private void timer_tick(object sender, EventArgs e)
         {
-            string answer = "sample";
+            string answer ="";
             if(level <= 5)
             {
                 answer = "I am pretty sure it's " + rightAnswer;
