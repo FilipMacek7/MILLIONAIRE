@@ -65,16 +65,8 @@ namespace WpfApp1
         Random rnd = new Random();
         private void createQuestions()
         {
-            //creating questions
-            if (!File.Exists("questions.xlsx"))
-            {
-                using (var p = new ExcelPackage())
-                {
-                    var ws = p.Workbook.Worksheets.Add("Questions");
-                    p.SaveAs(new FileInfo("questions.xlsx"));
-                }
-            }
-            else if (File.Exists("questions.xlsx"))
+            //loading questions
+            if (File.Exists("questions.xlsx"))
             {
                 using (var package = new ExcelPackage(new FileInfo("questions.xlsx")))
                 {
