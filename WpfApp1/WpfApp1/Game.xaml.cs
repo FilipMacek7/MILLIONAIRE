@@ -66,58 +66,55 @@ namespace WpfApp1
         private void createQuestions()
         {
             //loading questions
-            if (File.Exists("questions.xlsx"))
+            using (var package = new ExcelPackage(new FileInfo("questions.xlsx")))
             {
-                using (var package = new ExcelPackage(new FileInfo("questions.xlsx")))
+                ExcelWorksheet ws = package.Workbook.Worksheets["Questions"];
+                for (int i = 0; i < ws.Dimension.End.Row - 1; i++)
                 {
-                    ExcelWorksheet ws = package.Workbook.Worksheets["Questions"];
-                    for (int i = 0; i < ws.Dimension.End.Row - 1; i++)
+                    if (ws.Cells[i + 2, 2].Value.ToString().Trim().Equals("1"))
                     {
-                        if (ws.Cells[i + 2, 2].Value.ToString().Trim().Equals("1"))
-                        {
-                            Question question = new Question();
-                            easyQuestions.Add(question);
-                            easyQuestions[easyQuestions.Count() - 1].Content = ws.Cells[i + 2, 1].Value.ToString().Trim();
-                            string diff = ws.Cells[i + 2, 2].Value.ToString().Trim();
-                            easyQuestions[easyQuestions.Count() - 1].Difficulty = int.Parse(diff);
-                            easyQuestions[easyQuestions.Count() - 1].correctAnswer = ws.Cells[i + 2, 3].Value.ToString().Trim();
-                            easyQuestions[easyQuestions.Count() - 1].Answer2 = ws.Cells[i + 2, 4].Value.ToString().Trim();
-                            easyQuestions[easyQuestions.Count() - 1].Answer3 = ws.Cells[i + 2, 5].Value.ToString().Trim();
-                            easyQuestions[easyQuestions.Count() - 1].Answer4 = ws.Cells[i + 2, 6].Value.ToString().Trim();
-                        }
+                        Question question = new Question();
+                        easyQuestions.Add(question);
+                        easyQuestions[easyQuestions.Count() - 1].Content = ws.Cells[i + 2, 1].Value.ToString().Trim();
+                        string diff = ws.Cells[i + 2, 2].Value.ToString().Trim();
+                        easyQuestions[easyQuestions.Count() - 1].Difficulty = int.Parse(diff);
+                        easyQuestions[easyQuestions.Count() - 1].correctAnswer = ws.Cells[i + 2, 3].Value.ToString().Trim();
+                        easyQuestions[easyQuestions.Count() - 1].Answer2 = ws.Cells[i + 2, 4].Value.ToString().Trim();
+                        easyQuestions[easyQuestions.Count() - 1].Answer3 = ws.Cells[i + 2, 5].Value.ToString().Trim();
+                        easyQuestions[easyQuestions.Count() - 1].Answer4 = ws.Cells[i + 2, 6].Value.ToString().Trim();
                     }
-                    for (int i = 0; i < ws.Dimension.End.Row - 1; i++)
-                    {
-                        if (ws.Cells[i + 2, 2].Value.ToString().Trim().Equals("2"))
-                        {
-                            Question question = new Question();
-                            normalQuestions.Add(question);
-                            normalQuestions[normalQuestions.Count() - 1].Content = ws.Cells[i + 2, 1].Value.ToString().Trim();
-                            string diff = ws.Cells[i + 2, 2].Value.ToString().Trim();
-                            normalQuestions[normalQuestions.Count() - 1].Difficulty = int.Parse(diff);
-                            normalQuestions[normalQuestions.Count() - 1].correctAnswer = ws.Cells[i + 2, 3].Value.ToString().Trim();
-                            normalQuestions[normalQuestions.Count() - 1].Answer2 = ws.Cells[i + 2, 4].Value.ToString().Trim();
-                            normalQuestions[normalQuestions.Count() - 1].Answer3 = ws.Cells[i + 2, 5].Value.ToString().Trim();
-                            normalQuestions[normalQuestions.Count() - 1].Answer4 = ws.Cells[i + 2, 6].Value.ToString().Trim();
-                        }
-                    }
-                    for (int i = 0; i < ws.Dimension.End.Row - 1; i++)
-                    {
-                        if (ws.Cells[i + 2, 2].Value.ToString().Trim().Equals("3"))
-                        {
-                            Question question = new Question();
-                            hardQuestions.Add(question);
-                            hardQuestions[hardQuestions.Count() - 1].Content = ws.Cells[i + 2, 1].Value.ToString().Trim();
-                            string diff = ws.Cells[i + 2, 2].Value.ToString().Trim();
-                            hardQuestions[hardQuestions.Count() - 1].Difficulty = int.Parse(diff);
-                            hardQuestions[hardQuestions.Count() - 1].correctAnswer = ws.Cells[i + 2, 3].Value.ToString().Trim();
-                            hardQuestions[hardQuestions.Count() - 1].Answer2 = ws.Cells[i + 2, 4].Value.ToString().Trim();
-                            hardQuestions[hardQuestions.Count() - 1].Answer3 = ws.Cells[i + 2, 5].Value.ToString().Trim();
-                            hardQuestions[hardQuestions.Count() - 1].Answer4 = ws.Cells[i + 2, 6].Value.ToString().Trim();
-                        }
-                    }
-
                 }
+                for (int i = 0; i < ws.Dimension.End.Row - 1; i++)
+                {
+                    if (ws.Cells[i + 2, 2].Value.ToString().Trim().Equals("2"))
+                    {
+                        Question question = new Question();
+                        normalQuestions.Add(question);
+                        normalQuestions[normalQuestions.Count() - 1].Content = ws.Cells[i + 2, 1].Value.ToString().Trim();
+                        string diff = ws.Cells[i + 2, 2].Value.ToString().Trim();
+                        normalQuestions[normalQuestions.Count() - 1].Difficulty = int.Parse(diff);
+                        normalQuestions[normalQuestions.Count() - 1].correctAnswer = ws.Cells[i + 2, 3].Value.ToString().Trim();
+                        normalQuestions[normalQuestions.Count() - 1].Answer2 = ws.Cells[i + 2, 4].Value.ToString().Trim();
+                        normalQuestions[normalQuestions.Count() - 1].Answer3 = ws.Cells[i + 2, 5].Value.ToString().Trim();
+                        normalQuestions[normalQuestions.Count() - 1].Answer4 = ws.Cells[i + 2, 6].Value.ToString().Trim();
+                    }
+                }
+                for (int i = 0; i < ws.Dimension.End.Row - 1; i++)
+                {
+                    if (ws.Cells[i + 2, 2].Value.ToString().Trim().Equals("3"))
+                    {
+                        Question question = new Question();
+                        hardQuestions.Add(question);
+                        hardQuestions[hardQuestions.Count() - 1].Content = ws.Cells[i + 2, 1].Value.ToString().Trim();
+                        string diff = ws.Cells[i + 2, 2].Value.ToString().Trim();
+                        hardQuestions[hardQuestions.Count() - 1].Difficulty = int.Parse(diff);
+                        hardQuestions[hardQuestions.Count() - 1].correctAnswer = ws.Cells[i + 2, 3].Value.ToString().Trim();
+                        hardQuestions[hardQuestions.Count() - 1].Answer2 = ws.Cells[i + 2, 4].Value.ToString().Trim();
+                        hardQuestions[hardQuestions.Count() - 1].Answer3 = ws.Cells[i + 2, 5].Value.ToString().Trim();
+                        hardQuestions[hardQuestions.Count() - 1].Answer4 = ws.Cells[i + 2, 6].Value.ToString().Trim();
+                    }
+                }
+
             }
         }
         List<Question> questions = new List<Question>();
