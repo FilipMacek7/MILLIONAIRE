@@ -781,7 +781,6 @@ namespace WpfApp1
             SkipButton.Visibility = Visibility.Visible;
             askFriendImage.Source = new BitmapImage(new Uri(@"/img/askFriendused.png", UriKind.Relative));
             askFriendButton.IsEnabled = false;
-            turnOffSounds();
             askFriend.Play("askFriend.mp3");
             askFriend.SetVolume(10);
             timer.Interval = TimeSpan.FromSeconds(0.05);
